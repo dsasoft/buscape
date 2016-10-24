@@ -21,7 +21,7 @@ public class SubmarineController {
 				else if (submarine.getOrientation().getIndex() == Orientation.SOUTH.getIndex())
 					submarine.setOrientation(Orientation.WEST);
 				else if (submarine.getOrientation().getIndex() == Orientation.WEST.getIndex())
-					submarine.setOrientation(Orientation.WEST);
+					submarine.setOrientation(Orientation.NORTH);
 				break;
 			case Command.LEFT:
 				if (submarine.getOrientation().getIndex() == Orientation.NORTH.getIndex())
