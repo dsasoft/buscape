@@ -14,42 +14,42 @@ public class SubmarineController {
 		for (char c : cmds) {
 			switch (c) {
 			case Command.RIGHT:
-				if (submarine.getOrientation().getIndex() == Orientation.NORTH.getIndex())
-					submarine.setOrientation(Orientation.EAST);
-				else if (submarine.getOrientation().getIndex() == Orientation.EAST.getIndex())
-					submarine.setOrientation(Orientation.SOUTH);
-				else if (submarine.getOrientation().getIndex() == Orientation.SOUTH.getIndex())
-					submarine.setOrientation(Orientation.WEST);
-				else if (submarine.getOrientation().getIndex() == Orientation.WEST.getIndex())
-					submarine.setOrientation(Orientation.NORTH);
+				if (submarine.getLocation().getOrientation().getIndex() == Orientation.NORTH.getIndex())
+					submarine.getLocation().setOrientation(Orientation.EAST);
+				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.EAST.getIndex())
+					submarine.getLocation().setOrientation(Orientation.SOUTH);
+				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.SOUTH.getIndex())
+					submarine.getLocation().setOrientation(Orientation.WEST);
+				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.WEST.getIndex())
+					submarine.getLocation().setOrientation(Orientation.NORTH);
 				break;
 			case Command.LEFT:
-				if (submarine.getOrientation().getIndex() == Orientation.NORTH.getIndex())
-					submarine.setOrientation(Orientation.WEST);
-				else if (submarine.getOrientation().getIndex() == Orientation.WEST.getIndex())
-					submarine.setOrientation(Orientation.SOUTH);
-				else if (submarine.getOrientation().getIndex() == Orientation.SOUTH.getIndex())
-					submarine.setOrientation(Orientation.EAST);
-				else if (submarine.getOrientation().getIndex() == Orientation.EAST.getIndex())
-					submarine.setOrientation(Orientation.NORTH);
+				if (submarine.getLocation().getOrientation().getIndex() == Orientation.NORTH.getIndex())
+					submarine.getLocation().setOrientation(Orientation.WEST);
+				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.WEST.getIndex())
+					submarine.getLocation().setOrientation(Orientation.SOUTH);
+				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.SOUTH.getIndex())
+					submarine.getLocation().setOrientation(Orientation.EAST);
+				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.EAST.getIndex())
+					submarine.getLocation().setOrientation(Orientation.NORTH);
 				break;
 			case Command.UP:
-				submarine.getPosition().setZ(submarine.getPosition().getZ() + 1);
+				submarine.getLocation().getPosition().setZ(submarine.getLocation().getPosition().getZ() + 1);
 				break;
 
 			case Command.DOWN:
-				submarine.getPosition().setZ(submarine.getPosition().getZ() - 1);
+				submarine.getLocation().getPosition().setZ(submarine.getLocation().getPosition().getZ() - 1);
 				break;
 
 			case Command.MOVE:
-				if (submarine.getOrientation() == Orientation.NORTH)
-					submarine.getPosition().setY(submarine.getPosition().getY() + 1);
-				else if (submarine.getOrientation() == Orientation.SOUTH)
-					submarine.getPosition().setY(submarine.getPosition().getY() - 1);
-				else if (submarine.getOrientation() == Orientation.EAST)
-					submarine.getPosition().setX(submarine.getPosition().getX() + 1);
-				else if (submarine.getOrientation() == Orientation.WEST)
-					submarine.getPosition().setX(submarine.getPosition().getX() - 1);
+				if (submarine.getLocation().getOrientation() == Orientation.NORTH)
+					submarine.getLocation().getPosition().setY(submarine.getLocation().getPosition().getY() + 1);
+				else if (submarine.getLocation().getOrientation() == Orientation.SOUTH)
+					submarine.getLocation().getPosition().setY(submarine.getLocation().getPosition().getY() - 1);
+				else if (submarine.getLocation().getOrientation() == Orientation.EAST)
+					submarine.getLocation().getPosition().setX(submarine.getLocation().getPosition().getX() + 1);
+				else if (submarine.getLocation().getOrientation() == Orientation.WEST)
+					submarine.getLocation().getPosition().setX(submarine.getLocation().getPosition().getX() - 1);
 				break;
 
 			default:

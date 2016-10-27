@@ -22,6 +22,6 @@ public class SubmarineControllerTest {
 	public void assertProcessCommand() {
 		givenSubmarineAndController();
 		controller.processCommand(mockCommand);
-		Assert.assertEquals(mockSubmarine.currentLocation(), mockProcessedOutput);
+		Assert.assertEquals(mockSubmarine.currentLocationAsString(), mockProcessedOutput);
 	}
 }
