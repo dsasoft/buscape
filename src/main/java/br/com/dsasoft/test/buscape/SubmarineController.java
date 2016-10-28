@@ -14,48 +14,65 @@ public class SubmarineController {
 		for (char c : cmds) {
 			switch (c) {
 			case Command.RIGHT:
-				if (submarine.getLocation().getOrientation().getIndex() == Orientation.NORTH.getIndex())
-					submarine.getLocation().setOrientation(Orientation.EAST);
-				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.EAST.getIndex())
-					submarine.getLocation().setOrientation(Orientation.SOUTH);
-				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.SOUTH.getIndex())
-					submarine.getLocation().setOrientation(Orientation.WEST);
-				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.WEST.getIndex())
-					submarine.getLocation().setOrientation(Orientation.NORTH);
+				turnRight();
 				break;
 			case Command.LEFT:
-				if (submarine.getLocation().getOrientation().getIndex() == Orientation.NORTH.getIndex())
-					submarine.getLocation().setOrientation(Orientation.WEST);
-				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.WEST.getIndex())
-					submarine.getLocation().setOrientation(Orientation.SOUTH);
-				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.SOUTH.getIndex())
-					submarine.getLocation().setOrientation(Orientation.EAST);
-				else if (submarine.getLocation().getOrientation().getIndex() == Orientation.EAST.getIndex())
-					submarine.getLocation().setOrientation(Orientation.NORTH);
+				turnLeft();
 				break;
 			case Command.UP:
-				submarine.getLocation().getPosition().setZ(submarine.getLocation().getPosition().getZ() + 1);
+				moveUp();
 				break;
-
 			case Command.DOWN:
-				submarine.getLocation().getPosition().setZ(submarine.getLocation().getPosition().getZ() - 1);
+				moveDown();
 				break;
-
 			case Command.MOVE:
-				if (submarine.getLocation().getOrientation() == Orientation.NORTH)
-					submarine.getLocation().getPosition().setY(submarine.getLocation().getPosition().getY() + 1);
-				else if (submarine.getLocation().getOrientation() == Orientation.SOUTH)
-					submarine.getLocation().getPosition().setY(submarine.getLocation().getPosition().getY() - 1);
-				else if (submarine.getLocation().getOrientation() == Orientation.EAST)
-					submarine.getLocation().getPosition().setX(submarine.getLocation().getPosition().getX() + 1);
-				else if (submarine.getLocation().getOrientation() == Orientation.WEST)
-					submarine.getLocation().getPosition().setX(submarine.getLocation().getPosition().getX() - 1);
+				move();
 				break;
-
 			default:
 				break;
 			}
 		}
+	}
+
+	private void turnRight() {
+		if (submarine.getLocation().getOrientation().getIndex() == Orientation.NORTH.getIndex())
+			submarine.getLocation().setOrientation(Orientation.EAST);
+		else if (submarine.getLocation().getOrientation().getIndex() == Orientation.EAST.getIndex())
+			submarine.getLocation().setOrientation(Orientation.SOUTH);
+		else if (submarine.getLocation().getOrientation().getIndex() == Orientation.SOUTH.getIndex())
+			submarine.getLocation().setOrientation(Orientation.WEST);
+		else if (submarine.getLocation().getOrientation().getIndex() == Orientation.WEST.getIndex())
+			submarine.getLocation().setOrientation(Orientation.NORTH);
+	}
+
+	private void turnLeft() {
+		if (submarine.getLocation().getOrientation().getIndex() == Orientation.NORTH.getIndex())
+			submarine.getLocation().setOrientation(Orientation.WEST);
+		else if (submarine.getLocation().getOrientation().getIndex() == Orientation.WEST.getIndex())
+			submarine.getLocation().setOrientation(Orientation.SOUTH);
+		else if (submarine.getLocation().getOrientation().getIndex() == Orientation.SOUTH.getIndex())
+			submarine.getLocation().setOrientation(Orientation.EAST);
+		else if (submarine.getLocation().getOrientation().getIndex() == Orientation.EAST.getIndex())
+			submarine.getLocation().setOrientation(Orientation.NORTH);
+	}
+
+	private void moveUp() {
+		submarine.getLocation().getPosition().setZ(submarine.getLocation().getPosition().getZ() + 1);
+	}
+
+	private void moveDown() {
+		submarine.getLocation().getPosition().setZ(submarine.getLocation().getPosition().getZ() - 1);
+	}
+
+	private void move() {
+		if (submarine.getLocation().getOrientation() == Orientation.NORTH)
+			submarine.getLocation().getPosition().setY(submarine.getLocation().getPosition().getY() + 1);
+		else if (submarine.getLocation().getOrientation() == Orientation.SOUTH)
+			submarine.getLocation().getPosition().setY(submarine.getLocation().getPosition().getY() - 1);
+		else if (submarine.getLocation().getOrientation() == Orientation.EAST)
+			submarine.getLocation().getPosition().setX(submarine.getLocation().getPosition().getX() + 1);
+		else if (submarine.getLocation().getOrientation() == Orientation.WEST)
+			submarine.getLocation().getPosition().setX(submarine.getLocation().getPosition().getX() - 1);
 	}
 
 	public Submarine getSubmarine() {
