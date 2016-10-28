@@ -8,6 +8,19 @@ public class SubmarineController {
 		this.submarine = submarine;
 	}
 
+	/**
+	 * Change the Submarine Location, based on X, Y, Z Position 
+	 * and ( NORTH, SOUTH, EAST, WEST ) Orientation.
+	 * <BR/> 
+	 * @param command : String with following commands. e.g. RMMLMMMDDLL
+	 * <br/> //--- Orientation
+	 * <br/> R : Right
+	 * <br/> L : Left
+	 * <br/> //--- Position
+	 * <br/> U : Up
+	 * <br/> D : Down
+	 * <br/> M : Move
+	 * */
 	public void processCommand(String command) {
 		char[] cmds = command.toCharArray();
 
